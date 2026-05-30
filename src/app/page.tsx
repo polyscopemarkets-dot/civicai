@@ -50,7 +50,7 @@ export default function Home() {
             {stats.map(({ icon: Icon, keyEn, color }) => (
               <div key={keyEn} className="flex items-center gap-2 text-sm font-medium text-gray-600">
                 <Icon size={16} className={color} />
-                {(tr as Record<string, string>)[keyEn]}
+                {(tr as unknown as Record<string, string>)[keyEn]}
               </div>
             ))}
           </div>
