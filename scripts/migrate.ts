@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 import { migrate } from "drizzle-orm/node-postgres/migrator";
-import { db, pool } from "../src/lib/db";
+import { db, getPool } from "../src/lib/db";
 import path from "path";
 
 async function main() {
@@ -10,7 +10,7 @@ async function main() {
     migrationsFolder: path.join(process.cwd(), "src/lib/db/migrations"),
   });
   console.log("Migrations complete.");
-  await pool.end();
+  await getPool().end();
   process.exit(0);
 }
 
