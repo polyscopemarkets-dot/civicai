@@ -6,7 +6,7 @@ import { useLang, t } from "@/store/language";
 import { useGamification } from "@/store/gamification";
 import { useEffect } from "react";
 
-const navItems = (tr: typeof t.en) => [
+const navItems = (tr: typeof t.en | typeof t.sw) => [
   { href: "/chat", label: tr.nav.chat, icon: MessageSquare },
   { href: "/clauses", label: tr.nav.clauses, icon: BookOpen },
   { href: "/impact", label: tr.nav.impact, icon: BarChart2 },
